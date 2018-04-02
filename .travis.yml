@@ -1,0 +1,15 @@
+sudo: required
+
+dist: trusty
+
+language: generic
+
+jobs:
+  include:
+    - stage: build docker image
+      script:
+      - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+      - docker build -t docker-pentaho-server-ce:8.0 .
+      - docker images
+      - docker tag docker-pentaho-server-ce:8.0 $DOCKER_ORGANIZATION/docker-pentaho-server-ce:8.0
+      - docker push $DOCKER_ORGANIZATION/docker-pentaho-server-ce:8.0
