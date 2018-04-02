@@ -1,4 +1,4 @@
-
+[![Build Status](https://travis-ci.org/alexchanwk/docker-pentaho-server-ce.svg?branch=master)](https://travis-ci.org/alexchanwk/docker-pentaho-server-ce)
 # docker-pentaho-server-ce
 
 This docker image consists of **Pentaho Server Community Edition (CE) version 8.0**.
