@@ -13,4 +13,4 @@ RUN su -p pentaho -c "wget -nv -O pentaho-server-ce.zip https://sourceforge.net/
 RUN su -p pentaho -c "unzip pentaho-server-ce.zip > /dev/null 2>&1 && \
                       rm pentaho-server-ce.zip"
 
-ENTRYPOINT "su -p pentaho -c /home/pentaho/pentaho-server/start-pentaho.sh"
+ENTRYPOINT su -p pentaho -c /home/pentaho/pentaho-server/start-pentaho.sh
