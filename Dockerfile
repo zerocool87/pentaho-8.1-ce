@@ -2,9 +2,12 @@ FROM openjdk:8
 
 EXPOSE 8080
 
-# Create user and folder structure
+COPY run.sh     /run.sh
+
 RUN useradd -m -d /home/pentaho pentaho && \
-    chown -R pentaho:pentaho /home/pentaho
+    chown -R pentaho:pentaho /home/pentaho && \
+    chown pentaho:pentaho /run.sh
+
 
 WORKDIR /home/pentaho
 
@@ -14,4 +17,4 @@ RUN wget -nv -O pentaho-server-ce.zip https://sourceforge.net/projects/pentaho/f
     unzip pentaho-server-ce.zip > /dev/null 2>&1 && \
     rm pentaho-server-ce.zip
 
-ENTRYPOINT /home/pentaho/pentaho-server/start-pentaho.sh
+ENTRYPOINT /run.sh
