@@ -1,0 +1,14 @@
+version: '3'
+services:
+    pentaho:
+        container_name: pentaho
+        image: myserver/pentahovolume
+        ports:
+            - "8080:8080"
+        
+
+
+
+
+
+
