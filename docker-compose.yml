@@ -3,9 +3,13 @@ services:
     pentaho:
         container_name: pentaho
         image: myserver/pentahovolume
+        volumes:       
+        privileged: true
         ports:
             - "8080:8080"
-        
+        volumes:
+            - /mnt/pentaho-data/hsqldb:/home/pentaho/pentaho-server/data/hsqldb 
+            - /mnt/pentaho-data/repo:/home/pentaho/pentaho-server/pentaho-solutions/system/jackrabbit/repository 
 
 
 
