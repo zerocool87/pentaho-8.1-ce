@@ -1,5 +1,5 @@
 #/bin/bash
-sudo rm -rf hsqldb Repo
+sudo rm -rf /mnt/pentaho-data/hsqldb /mnt/pentaho-data/Repo
 docker volume prune
 docker stop $(docker ps -a -q)
 docker build -t myserver/pentahovolume .
