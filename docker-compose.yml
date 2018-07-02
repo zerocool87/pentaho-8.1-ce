@@ -3,7 +3,7 @@ services:
     pentaho:
         container_name: pentaho
         image: myserver/pentahovolume
-        volumes:       
+        restart: always      
         privileged: true
         ports:
             - "8080:8080"
