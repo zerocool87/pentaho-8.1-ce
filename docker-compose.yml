@@ -2,7 +2,7 @@ version: '3'
 services:
     pentaho:
         container_name: pentaho
-        image: myserver/pentahovolume
+        image: zerocool87000/pentaho-8.1-ce
         restart: always      
         privileged: true
         ports:
